@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Sizer</title>
+    <link rel="stylesheet" href="https://unpkg.com/bulma">
+  </head>
+  <body>
+    <div id="app">
+      <section class="hero is-fullheight is-light">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-size-1-desktop is-size-2-mobile">Ring Sizer</h1>
+            <p class="subtitle is-size-4-desktop is-size-5-mobile">Please follow the instructions below to determine your ring size:</p>
+            <div class="columns is-centered">
+              <div class="column is-half">
+                <div class="field">
+                  <label class="label">Step 1</label>
+                  <p class="is-size-5">Wrap a piece of string or paper around the base of your finger.</p>
+                  <input class="input" type="text" placeholder="Enter circumference in mm" v-model="circumference">
+                </div>
+                <div class="field">
+                  <label class="label">Step 2</label>
+                  <p class="is-size-5">Use a pen to mark the point where the string or paper overlaps.</p>
+                  <input class="input" type="text" placeholder="Enter length in mm" v-model="length">
+                </div>
+                <div class="field">
+                  <button class="button is-primary" @click="calculateSize">Calculate</button>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered" v-if="size">
+              <div class="column is-half">
+                <div class="notification is-primary">
+                  <p class="is-size-5">Your ring size is:</p>
+                  <h2 class="title is-size-1-desktop is-size-2-mobile">{{ size }}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.2.6"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
